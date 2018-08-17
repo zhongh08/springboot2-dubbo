@@ -1,0 +1,14 @@
+server:
+  port: 8082
+spring:
+  dubbo:
+    application:
+      name: demo-consumer
+    base-package: com.syoki.consumer  # dubbo服务调用者所在的包
+    registry:
+      address: 192.168.1.49                   # zookeeper注册中心的地址
+      port: 2181                           # zookeeper注册中心的端口
+    consumer:
+      timeout: 1000
+      check: true                          # 服务启动时检查被调用服务是否可用
+      retries: 2                           # 服务调用重试次数
